@@ -1,5 +1,5 @@
 name: plugin-asniffer
-description: Static analysis plugin that computes annotation's usage
+description: A static analysis plugin that computes annotation's usage
 display-name: plugin-asniffer
 picture: plugin.png
 category: backend # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#category
@@ -14,18 +14,7 @@ technologies: # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/
   - "Api"
 types:
   - app
-inputs:
-  - label: Input Example
-    type: text
-    name: example
-    default: any text
-  - label: Example of number
-    type: int
-    name: any_number
-    default: "10"
-  - label: Example of list
-    type: multiselect
-    name: any_list
-    items:
-      - item1
-      - item2
+hooks:
+  - type: run-script
+    trigger: before-render
+    script: script.py
